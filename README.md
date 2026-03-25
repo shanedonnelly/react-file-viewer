@@ -12,10 +12,10 @@ Install directly from GitHub — no npm account needed:
 
 ```bash
 # Latest from main branch
-npm install github:YOUR_USERNAME/react-file-viewer
+npm install github:shanedonnelly/react-file-viewer
 
 # Pin to a specific release tag (recommended)
-npm install github:YOUR_USERNAME/react-file-viewer#v1.0.0
+npm install github:shanedonnelly/react-file-viewer#v1.0.0
 ```
 
 ---
