@@ -111,43 +111,11 @@ export const FileType = {
   XML: "xml",
   YAML: "yaml",
   JSON: "json",
-  OTHER: "other",
+  OTHER: "markdown", // Monaco doesn't support a generic "text" mode, so we use markdown for other files
 } as const;
 
 export type FileTypeValue = (typeof FileType)[keyof typeof FileType];
 
-// ---------------------------------------------------------------------------
-// Fallback <code> styles (for FileType.OTHER)
-// ---------------------------------------------------------------------------
-
-const CODE_STYLE_BASE: React.CSSProperties = {
-  display: "block",
-  width: "100%",
-  boxSizing: "border-box",
-  whiteSpace: "pre",
-  fontFamily: "'Consolas', 'Courier New', monospace",
-  fontSize: "14px",
-  lineHeight: "1.5",
-  padding: "16px",
-  overflowX: "auto",
-  overflowY: "auto",
-  borderRadius: "4px",
-  border: "1px solid",
-};
-
-const CODE_STYLE_LIGHT: React.CSSProperties = {
-  ...CODE_STYLE_BASE,
-  backgroundColor: "#ffffff",
-  color: "#000000",
-  borderColor: "#e0e0e0",
-};
-
-const CODE_STYLE_DARK: React.CSSProperties = {
-  ...CODE_STYLE_BASE,
-  backgroundColor: "#1e1e1e",
-  color: "#d4d4d4",
-  borderColor: "#3c3c3c",
-};
 
 // ---------------------------------------------------------------------------
 // Props
@@ -194,15 +162,6 @@ export default function FileViewer({
   useEffect(() => {
     injectReadOnlyCss();
   }, []);
-
-  // Fallback for unsupported / "other" types
-  if (file_type === FileType.OTHER) {
-    return (
-      <code style={dark_mode ? CODE_STYLE_DARK : CODE_STYLE_LIGHT}>
-        {text}
-      </code>
-    );
-  }
 
   return (
     <div className="file-viewer-readonly" style={{ width: "100%" }}>
