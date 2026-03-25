@@ -1,4 +1,4 @@
-This is a Next TS mini app to test the react-file-viewer package.
+This is a Next.js example app to test the react-file-viewer package.
 
 ## Try yourself
 

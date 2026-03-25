@@ -8,14 +8,9 @@ A zero-config, read-only code viewer React component powered by [Monaco Editor](
 
 ## Installation
 
-Install directly from GitHub — no npm account needed:
-
 ```bash
 # Latest from main branch
 npm install github:shanedonnelly/react-file-viewer
-
-# Pin to a specific release tag (recommended)
-npm install github:shanedonnelly/react-file-viewer#v1.0.0
 ```
 
 ---
@@ -111,7 +106,7 @@ import FileViewer, { FileType } from "react-file-viewer";
 ## Build from source
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/react-file-viewer
+git clone https://github.com/shanedonnelly/react-file-viewer
 cd react-file-viewer
 npm install
 npm run build   # outputs to dist/
